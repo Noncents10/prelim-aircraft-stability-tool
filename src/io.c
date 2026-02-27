@@ -34,6 +34,7 @@ void read_aircraft_from_cli(Aircraft *a)
     a->deps_da= prompt_double("Downwash gradient dε/dα", "-");
 
     a->x_cg   = prompt_double("CG location x_cg", "m");
+
 }
 
 void print_results(const Aircraft *a)

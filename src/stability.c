@@ -1,3 +1,23 @@
+/*
+Conceptual longitudinal stability model.
+
+Assumptions:
+- Linear aerodynamics
+- Subsonic flow
+- Wing-body aerodynamic centre provided as input
+- No fuselage pitching moment term included
+- Tail effectiveness reduced by downwash
+
+Neutral point model:
+x_np = x_ac_w + [ K / (a_w + K) ] * V_H * c_bar
+where:
+V_H = (S_t * l_t) / (S_w * c_bar)
+K = eta_t * a_t * (1 - dε/dα)
+
+Static margin:
+SM = (x_np - x_cg) / c_bar
+*/
+
 #include "stability.h"
 
 double tail_volume_coeff(const Aircraft *a)
